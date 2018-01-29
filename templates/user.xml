@@ -1,0 +1,29 @@
+<templateSet group="user">
+  <template name="emifold" value="// &lt;editor-fold desc=&quot;$DESC$&quot;&gt;&#10;$END$&#10;// &lt;/editor-fold&gt;" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="DESC" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+  <template name="emiaction" value="export class $NAME$ implements Action {&#10;  static _type = '$FILENAME$.$NAME$';&#10;  type: string;&#10;&#10;  constructor(public payload: $TYPE$) {&#10;    this.type = $NAME$._type;&#10;  }&#10;}" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILENAME" expression="firstWord(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+  <template name="emieffect" value="@Effect() $saveEffect$ = this.actions.ofType($WiSave$._type).pipe(&#10;    map((a: $WiSave$) =&gt; {&#10;        $END$&#10;    })&#10;  );" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="saveEffect" expression="jsSuggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="WiSave" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSX_HTML" value="false" />
+      <option name="JS_EXPRESSION" value="false" />
+      <option name="JS_STATEMENT" value="false" />
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+</templateSet>
