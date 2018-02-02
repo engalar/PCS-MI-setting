@@ -26,4 +26,10 @@
       <option name="TypeScript" value="true" />
     </context>
   </template>
+  <template name="emihmr" value="if (module.hot) {&#10;  module.hot.accept(async () =&gt; {&#10;&#10;  });&#10;&#10;  module.hot.dispose(data =&gt; {&#10;    // Clean up and pass data to the updated module...&#10;    data.role = '';&#10;  });&#10;}" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
 </templateSet>
